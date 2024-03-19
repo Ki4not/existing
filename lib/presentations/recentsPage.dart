@@ -1,7 +1,10 @@
 import 'package:figma/activityCard.dart';
 import 'package:figma/activityClass.dart';
 import 'package:figma/businessLogic/recentsPageBloc/recents_page_bloc.dart';
-import 'package:figma/profilePage.dart';
+import 'package:figma/presentations/activityPage.dart';
+import 'package:figma/presentations/mirrorPage.dart';
+import 'package:figma/presentations/searchPage.dart';
+import 'package:figma/presentations/profilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -18,7 +21,7 @@ List<BottomNavigationBarItem> navItems = const <BottomNavigationBarItem>[
   ),
   BottomNavigationBarItem(
     icon: Icon(FontAwesomeIcons.bell),
-    label: 'Notifcation',
+    label: 'Activity',
   ),
   BottomNavigationBarItem(
     icon: Icon(FontAwesomeIcons.desktop),
@@ -33,7 +36,9 @@ List<Activity> activities = [
 
 List<Widget> navScreens = <Widget>[
   Recents(activities: activities),
-  
+  const SearchPage(),
+  const ActivityPage(),
+  const MirrorPage(),
 ];
 
 class RecentsPage extends StatelessWidget {

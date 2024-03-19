@@ -1,4 +1,4 @@
-import 'package:figma/profilePage.dart';
+import 'package:figma/presentations/profilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -15,7 +15,7 @@ class Notifications extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(5.0, 50.0, 0.0, 0.0),
             child: Row(
               children: [
-                BackSettingHeader(text: 'Notifications')
+                ProfileBackSettingHeader(text: 'Notifications')
               ],
             ),
           ),
@@ -94,8 +94,8 @@ class Notifications extends StatelessWidget {
   }
 }
 
-class BackSettingHeader extends StatelessWidget {
-  const BackSettingHeader({
+class ProfileBackSettingHeader extends StatelessWidget {
+  const ProfileBackSettingHeader({
     super.key,
     required this.text
   });
@@ -108,10 +108,7 @@ class BackSettingHeader extends StatelessWidget {
       children: [
         IconButton(
           icon: const Icon(FontAwesomeIcons.arrowLeft),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Profile()));
-          },
+          onPressed: () => Navigator.pop(context)
         ),
         const SizedBox(
           width: 10.0,

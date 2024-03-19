@@ -1,6 +1,5 @@
-import 'package:figma/notificationsPage.dart';
+import 'package:figma/presentations/notificationsPage.dart';
 import 'package:figma/presentations/loginPage.dart';
-import 'package:figma/presentations/recentsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -128,10 +127,15 @@ class Profile extends StatelessWidget {
                     color: Colors.grey[500],
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Notifications()));
+                    Fluttertoast.showToast(
+                    msg: 'Notification Settings',
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                  );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Notifications()));
                   },
                 ),
               ],
@@ -306,7 +310,7 @@ Future<void> _dialogueBuilder(BuildContext context) {
                   toastLength: Toast.LENGTH_SHORT,
                   gravity: ToastGravity.BOTTOM,);
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Login()));
+                    MaterialPageRoute(builder: (context) => LoginPage()));
               },
               child: Text('Log out', style: TextStyle(color: Colors.red, fontSize: 15.0),),
               style: TextButton.styleFrom(

@@ -1,10 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:figma/activityClass.dart';
 import 'package:figma/businessLogic/recentsPageBloc/recents_page_bloc.dart';
 import 'package:figma/presentations/recentsPage.dart';
 import 'package:flutter/material.dart';
-
-
 
 class RouteGenerator {
   final RecentsPageBloc recentsPageBloc = RecentsPageBloc();
